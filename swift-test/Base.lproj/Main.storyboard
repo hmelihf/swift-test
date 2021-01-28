@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-zt-1PF">
+                                <rect key="frame" x="0.0" y="164" width="414" height="698"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="epc-5r-FXs">
+                                    <size key="itemSize" width="368" height="54"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonCollectionViewCell" id="e9f-Gt-dzI" customClass="PokemonCollectionViewCell" customModule="swift_test">
+                                        <rect key="frame" x="23" y="0.0" width="368" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="taJ-d9-tPB">
+                                            <rect key="frame" x="0.0" y="0.0" width="368" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="368" height="54"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5bz-5b-KSc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eUp-At-E62"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfN-yU-Wjc" customClass="StorylyView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="HGn-xp-YBN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yfN-yU-Wjc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="14f-mG-5dv"/>
+                            <constraint firstItem="0vp-zt-1PF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AnM-Vv-KA3"/>
+                            <constraint firstItem="yfN-yU-Wjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JGx-8l-0AI"/>
+                            <constraint firstItem="yfN-yU-Wjc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NFy-Z1-Pqp"/>
+                            <constraint firstItem="0vp-zt-1PF" firstAttribute="top" secondItem="yfN-yU-Wjc" secondAttribute="bottom" id="T1Z-It-R9K"/>
+                            <constraint firstItem="0vp-zt-1PF" firstAttribute="top" secondItem="yfN-yU-Wjc" secondAttribute="bottom" id="VBV-CE-Lb8"/>
+                            <constraint firstItem="0vp-zt-1PF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WLg-q1-IAj"/>
+                            <constraint firstItem="0vp-zt-1PF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oBb-u1-SDq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pokemonCollectionView" destination="0vp-zt-1PF" id="qbE-wT-gj1"/>
+                        <outlet property="storylyView" destination="yfN-yU-Wjc" id="KGY-Ud-rcX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-201.44927536231884" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

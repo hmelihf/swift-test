@@ -1,0 +1,22 @@
+PODS:
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+  - Storyly (1.9.0):
+    - SDWebImage (= 5.10.0)
+
+DEPENDENCIES:
+  - Storyly
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SDWebImage
+    - Storyly
+
+SPEC CHECKSUMS:
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  Storyly: 28f5608ba344ad06d64be062e34a1dff20471ce3
+
+PODFILE CHECKSUM: 68c064f9f2d05fe92c7c774ca11e0c32762bb108
+
+COCOAPODS: 1.10.1
